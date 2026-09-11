@@ -369,14 +369,6 @@ export default function HeroSection() {
         {/* LAYER 3 (FOREGROUND): Editorial Typography & UI Controls */}
         <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-between p-5 sm:p-8 md:p-16 lg:p-20">
           {/* Top Brand Marker */}
-          <div className="flex items-center justify-between w-full pt-14 sm:pt-10 md:pt-4">
-            <span className="text-[10px] sm:text-xs tracking-[0.22em] sm:tracking-[0.3em] text-white/60 uppercase font-mono">
-              SONY // AUDIO
-            </span>
-            <span className="font-script text-lg sm:text-2xl text-white/80">
-              pure audio
-            </span>
-          </div>
 
           {/* Middle Content Row */}
           <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8 my-auto">

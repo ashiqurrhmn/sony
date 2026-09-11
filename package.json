@@ -10,7 +10,8 @@
     "optimize:frames": "node scripts/optimize-animation-frames.js",
     "optimize:frames:clean": "node scripts/optimize-animation-frames.js --remove-originals",
     "optimize:images": "node scripts/optimize-static-images.js",
-    "optimize:images:clean": "node scripts/optimize-static-images.js --remove-originals"
+    "optimize:images:clean": "node scripts/optimize-static-images.js --remove-originals",
+    "compress:frames": "node scripts/recompress-animation-webp.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
