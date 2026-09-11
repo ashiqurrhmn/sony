@@ -34,7 +34,7 @@ export default function ManifestSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-36 px-6 md:px-16 lg:px-24 overflow-hidden border-t border-b border-white/10 bg-black"
+      className="relative py-20 sm:py-24 md:py-36 px-5 sm:px-6 md:px-16 lg:px-24 overflow-hidden border-t border-b border-white/10 bg-black"
     >
       <div className="relative max-w-7xl mx-auto">
         {/* Top Header Label */}
@@ -42,7 +42,7 @@ export default function ManifestSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/[0.03] mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -58,13 +58,13 @@ export default function ManifestSection() {
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/60 font-light leading-relaxed">
             Before we reveal every millimeter of internal craftsmanship, discover how we sculpted silence into physical form.
           </p>
         </motion.div>
 
         {/* 3 Pillars / Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {highlights.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -75,7 +75,7 @@ export default function ManifestSection() {
                 delay: 0.2 + idx * 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="relative group p-8 md:p-10 rounded-3xl border border-white/10 bg-white/[0.02] hover:border-white/30 transition-all duration-300 hover:-translate-y-1"
+              className="premium-card relative group p-6 sm:p-8 md:p-10 rounded-3xl hover:border-white/30 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">
@@ -105,4 +105,3 @@ export default function ManifestSection() {
     </section>
   );
 }
-

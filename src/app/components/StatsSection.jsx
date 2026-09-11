@@ -56,28 +56,28 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="py-24 border-y border-white/[0.06] bg-[#000000]">
-      <div className="max-w-6xl mx-auto px-8">
+    <section className="py-16 sm:py-20 md:py-24 border-y border-white/[0.06] bg-[#000000]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-12"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10 sm:gap-12"
         >
           {stats.map((stat, idx) => (
             <motion.div key={idx} variants={itemVariants} className="text-center">
               <div className="flex items-baseline justify-center">
-                <span className="text-5xl md:text-6xl font-bold tracking-tight text-white">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
                   <AnimatedCounter from={0} to={stat.number} inView={isInView} />
                 </span>
                 {stat.suffix && (
-                  <span className="text-2xl text-white/40 font-light ml-1">
+                  <span className="text-lg sm:text-2xl text-white/40 font-light ml-1">
                     {stat.suffix}
                   </span>
                 )}
               </div>
-              <p className="text-sm text-white/45 mt-2">
+              <p className="text-xs sm:text-sm text-white/45 mt-2">
                 {stat.label}
               </p>
             </motion.div>
@@ -87,4 +87,3 @@ export default function StatsSection() {
     </section>
   );
 }
-

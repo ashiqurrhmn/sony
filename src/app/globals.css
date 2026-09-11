@@ -15,14 +15,17 @@
 
 :root {
   --bg-primary: #000000;
-  --bg-secondary: #050505;
+  --bg-secondary: #070707;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-raised: rgba(255, 255, 255, 0.06);
+  --metal: #d9d9d4;
 
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: rgba(255, 255, 255, 0.45);
   --text-subtle: rgba(255, 255, 255, 0.3);
 
-  --nav-bg: rgba(0, 0, 0, 0.85);
+  --nav-bg: rgba(10, 10, 10, 0.72);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.25);
 
@@ -44,12 +47,20 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.09), transparent 30rem),
+    #000000;
   color: #ffffff;
   font-family: var(--font-switzer);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* ─── Font Utility Classes ─────────────────────── */
@@ -65,20 +76,21 @@ body {
 /* ─── Plain Black and White Buttons ────────────── */
 
 .btn-solid-white {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #e5e5e1 100%);
   color: #000000;
   font-weight: 600;
   border-radius: 9999px;
-  transition: all 0.25s ease;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .btn-solid-white:hover {
-  background-color: rgba(255, 255, 255, 0.85);
   transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(255, 255, 255, 0.2);
 }
 
 .btn-outline-white {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.025);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
@@ -89,6 +101,12 @@ body {
   border-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.06);
   transform: translateY(-1px);
+}
+
+.premium-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.018));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 60px rgba(0, 0, 0, 0.2);
 }
 
 /* ─── Glassmorphism Minimal ────────────────────── */
@@ -135,3 +153,23 @@ body {
   transition: width 0.3s ease;
 }
 
+@media (max-width: 639px) {
+  html {
+    font-size: 15px;
+  }
+
+  .premium-card {
+    border-radius: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

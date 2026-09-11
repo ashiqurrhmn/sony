@@ -28,7 +28,7 @@ function InteractiveImage({ src, alt, placeholderText }) {
 
   return (
     <div
-      className="w-full h-80 rounded-3xl bg-white/[0.02] border border-white/10 flex items-center justify-center overflow-hidden cursor-crosshair relative"
+      className="premium-card w-full h-64 sm:h-80 rounded-3xl flex items-center justify-center overflow-hidden cursor-crosshair relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
@@ -84,11 +84,11 @@ function ContentRow({
       variants={containerVariants}
       className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}
     >
-      <div className={`md:w-1/2 mb-12 md:mb-0 ${reversed ? 'md:pl-16' : 'md:pr-16'}`}>
+      <div className={`md:w-1/2 mb-10 md:mb-0 ${reversed ? 'md:pl-16' : 'md:pr-16'}`}>
         <motion.p variants={childVariants} className="text-xs tracking-[0.3em] text-white/50 uppercase font-mono mb-4">
           {eyebrow}
         </motion.p>
-        <motion.h3 variants={childVariants} className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+        <motion.h3 variants={childVariants} className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-5 sm:mb-6">
           {heading}
         </motion.h3>
         <motion.p variants={childVariants} className="text-base text-white/60 leading-relaxed mb-6">
@@ -114,8 +114,8 @@ function ContentRow({
 
 export default function ExperienceSection() {
   return (
-    <section className="py-32 px-8 md:px-16 lg:px-24 bg-black border-t border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex flex-col gap-20 py-10">
+    <section className="py-20 sm:py-24 md:py-32 px-5 sm:px-8 md:px-16 lg:px-24 bg-black border-t border-b border-white/10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-16 sm:gap-20 py-0 sm:py-10">
         <ContentRow 
           eyebrow="COMFORT"
           heading="Designed to disappear."
@@ -126,8 +126,7 @@ export default function ExperienceSection() {
             'Optimized for glasses-friendly comfort'
           ]}
           placeholderText="XM6"
-          imageSrc="/headphone-model-frames/ezgif-frame-080.png"
-          imageSrc="/comfort_cushions.jpg"
+          imageSrc="/comfort_cushions.webp"
         />
 
         <ContentRow 
@@ -141,11 +140,9 @@ export default function ExperienceSection() {
           ]}
           placeholderText="AI"
           reversed={true}
-          imageSrc="/hero-section-headphone-frames/ezgif-frame-120.png"
-          imageSrc="/smart_ai_chip.jpg"
+          imageSrc="/smart_ai_chip.webp"
         />
       </div>
     </section>
   );
 }
-

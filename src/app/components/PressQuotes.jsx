@@ -38,7 +38,7 @@ export default function PressQuotes() {
   const marqueeItems = [...quotes, ...quotes];
 
   return (
-    <section className="py-24 bg-black overflow-hidden">
+    <section className="py-16 sm:py-24 bg-black overflow-hidden">
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
@@ -57,7 +57,7 @@ export default function PressQuotes() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className="max-w-7xl mx-auto px-8 mb-16"
+        className="max-w-7xl mx-auto px-5 sm:px-8 mb-10 sm:mb-16"
       >
         <p className="text-xs tracking-[0.3em] text-white/50 uppercase font-mono mb-6 text-center">
           PRESS
@@ -72,10 +72,10 @@ export default function PressQuotes() {
           {marqueeItems.map((item, idx) => (
             <div 
               key={idx} 
-              className="min-w-[350px] max-w-[400px] mx-4 p-8 rounded-2xl border border-white/10 bg-white/[0.02] flex-shrink-0 flex flex-col justify-between hover:border-white/30 transition-colors"
+            className="premium-card min-w-[82vw] sm:min-w-[350px] max-w-[400px] mx-2 sm:mx-4 p-6 sm:p-8 rounded-2xl flex-shrink-0 flex flex-col justify-between hover:border-white/30 transition-colors"
             >
               <p className="text-base text-white/70 leading-relaxed italic mb-8">
-                "{item.quote}"
+                &ldquo;{item.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -91,4 +91,3 @@ export default function PressQuotes() {
     </section>
   );
 }
-

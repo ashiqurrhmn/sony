@@ -84,7 +84,7 @@ export default function FeaturesGrid() {
   };
 
   return (
-    <section className="py-32 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto bg-black">
+    <section className="py-20 sm:py-24 md:py-32 px-5 sm:px-8 md:px-16 lg:px-24 max-w-7xl mx-auto bg-black">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -94,19 +94,19 @@ export default function FeaturesGrid() {
         <motion.p variants={itemVariants} className="text-xs tracking-[0.3em] text-white/50 uppercase font-mono mb-4">
           WHY WH-1000XM6
         </motion.p>
-        <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+        <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
           Every detail, considered.
         </motion.h2>
-        <motion.p variants={itemVariants} className="text-lg text-white/60 mb-16 max-w-2xl">
+        <motion.p variants={itemVariants} className="text-base sm:text-lg text-white/60 mb-10 sm:mb-16 max-w-2xl">
           Six reasons the XM6 sets a new standard.
         </motion.p>
 
-        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="bg-white/[0.02] border border-white/10 rounded-2xl p-8 group hover:bg-white/[0.04] hover:border-white/30 transition-all duration-300 flex flex-col"
+              className="premium-card rounded-2xl p-6 sm:p-8 group hover:bg-white/[0.04] hover:border-white/30 transition-all duration-300 flex flex-col"
             >
               <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-6">
                 {feature.icon}
@@ -124,4 +124,3 @@ export default function FeaturesGrid() {
     </section>
   );
 }
-

@@ -52,7 +52,7 @@ export default function HeroSection() {
           resolve(null);
         };
         const idx = String(i).padStart(3, "0");
-        img.src = `/hero-section-headphone-frames/ezgif-frame-${idx}.png`;
+        img.src = `/hero-section-headphone-frames/ezgif-frame-${idx}.webp`;
       });
 
     const loadAll = async () => {
@@ -100,8 +100,8 @@ export default function HeroSection() {
     const ch = canvas.height;
     const iw = img.naturalWidth || 1920;
     const ih = img.naturalHeight || 1080;
-    // Scale slightly smaller than full cover for an editorial feel
-    const scale = Math.max(cw / iw, ch / ih) * 0.75;
+    // Preserve the product's presence on narrow screens without cropping its silhouette.
+    const scale = Math.max(cw / iw, ch / ih) * (window.innerWidth < 640 ? 0.92 : 0.75);
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (cw - dw) / 2;
@@ -330,6 +330,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="overview"
       ref={sectionRef}
       className="relative font-sans-switzer select-none"
       style={{ height: "550vh" }}
@@ -361,23 +362,23 @@ export default function HeroSection() {
         />
 
         {/* LAYER 3 (FOREGROUND): Editorial Typography & UI Controls */}
-        <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-between p-8 sm:p-12 md:p-16 lg:p-20">
+        <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-between p-5 sm:p-8 md:p-16 lg:p-20">
           {/* Top Brand Marker */}
-          <div className="flex items-center justify-between w-full pt-4">
-            <span className="text-xs tracking-[0.3em] text-white/60 uppercase font-mono">
+          <div className="flex items-center justify-between w-full pt-14 sm:pt-10 md:pt-4">
+            <span className="text-[10px] sm:text-xs tracking-[0.22em] sm:tracking-[0.3em] text-white/60 uppercase font-mono">
               SONY // AUDIO
             </span>
-            <span className="font-script text-xl sm:text-2xl text-white/80">
+            <span className="font-script text-lg sm:text-2xl text-white/80">
               pure audio
             </span>
           </div>
 
           {/* Middle Content Row */}
-          <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-8 my-auto">
+          <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8 my-auto">
             {/* Left Column: Description + Buttons */}
             <div className="max-w-sm sm:max-w-md">
-              <div ref={leftDescRef} className="opacity-0 mb-6">
-                <p className="text-sm sm:text-base text-white/70 leading-relaxed font-light">
+              <div ref={leftDescRef} className="opacity-0 mb-5 sm:mb-6 max-w-[17rem] sm:max-w-md">
+                <p className="text-[13px] sm:text-base text-white/70 leading-relaxed font-light">
                   intelligent industry-leading noise cancelling headphones with
                   premium sound elevate your listening experience with the
                   ability to personalize and control everything you hear.
@@ -387,17 +388,17 @@ export default function HeroSection() {
               {/* Action Buttons */}
               <div
                 ref={leftButtonsRef}
-                className="flex items-center gap-4 pointer-events-auto opacity-0"
+                className="flex flex-wrap items-center gap-2.5 sm:gap-4 pointer-events-auto opacity-0"
               >
                 <a
                   href="#buy"
-                  className="px-6 sm:px-7 py-3 rounded-full bg-white hover:bg-white/90 text-black text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 hover:-translate-y-0.5"
+                  className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-gradient-to-br from-white to-white/80 text-black text-xs sm:text-sm font-semibold tracking-wide shadow-[0_8px_24px_rgba(255,255,255,0.12)] transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Buy now
                 </a>
                 <a
                   href="#technology"
-                  className="px-6 sm:px-7 py-3 rounded-full border border-white/30 hover:border-white hover:bg-white/10 text-white text-xs sm:text-sm font-medium tracking-wide transition-all duration-200"
+                  className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full border border-white/30 bg-black/10 hover:border-white hover:bg-white/10 text-white text-xs sm:text-sm font-medium tracking-wide transition-all duration-200"
                 >
                   Learn more
                 </a>
@@ -407,7 +408,7 @@ export default function HeroSection() {
             {/* Right Column */}
             <div
               ref={rightTagRef}
-              className="text-left md:text-right opacity-0"
+              className="text-left md:text-right opacity-0 hidden sm:block"
             >
               <h3
                 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-bold tracking-tight"
@@ -435,7 +436,7 @@ export default function HeroSection() {
 
             <div
               ref={rightSocialRef}
-              className="flex items-center gap-5 text-white/40 text-xs opacity-0"
+              className="hidden sm:flex items-center gap-5 text-white/40 text-xs opacity-0"
             >
               <span className="hover:text-white transition-colors cursor-pointer">
                 ANC
@@ -456,15 +457,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
           <div
             ref={midStoryRef}
-            className="text-center opacity-0 max-w-2xl px-8"
+            className="text-center opacity-0 max-w-2xl px-5 sm:px-8"
           >
             <p className="font-script text-3xl sm:text-4xl text-white mb-2">
               pure immersion
             </p>
-            <h2 className="font-sans-switzer text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
+            <h2 className="font-sans-switzer text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
               Mastered for clarity.
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-white/60 max-w-md mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-lg text-white/60 max-w-md mx-auto leading-relaxed">
               Every curve tuned for acoustic pressure distribution and
               effortless weightless listening.
             </p>
@@ -473,7 +474,7 @@ export default function HeroSection() {
 
         {/* END CTA HOOK */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-          <div ref={endCtaRef} className="text-center opacity-0">
+          <div ref={endCtaRef} className="text-center opacity-0 px-5">
             <p className="font-script text-2xl sm:text-3xl text-white mb-3">
               Next Chapter
             </p>

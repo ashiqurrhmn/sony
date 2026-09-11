@@ -20,20 +20,20 @@ export default function MovingTextSection({ containerRef }) {
   const y3 = useTransform(scrollYProgress, [0.65, 0.75, 0.90, 1.0], [40, 0, 0, -30]);
 
   return (
-    <div className="relative w-full h-full flex items-center pointer-events-none pl-8 md:pl-16 lg:pl-24">
+    <div className="relative w-full h-full flex items-center pointer-events-none px-5 sm:px-8 md:px-16 lg:px-24">
       {/* Block 1 */}
       <motion.div
         style={{ opacity: opacity1, y: y1 }}
-        className="absolute inset-0 flex flex-col justify-center max-w-xl"
+        className="absolute inset-0 flex flex-col justify-center max-w-[17rem] sm:max-w-md md:max-w-xl"
       >
         <div className="w-12 h-px bg-white/40 mb-4" />
         <h3 className="text-xs tracking-[0.3em] text-white/50 font-mono uppercase mb-4">
           DESIGN PHILOSOPHY
         </h3>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
           Sculpted for<br />every moment.
         </h2>
-        <p className="text-lg text-white/70 mt-6 leading-relaxed">
+        <p className="text-sm sm:text-lg text-white/70 mt-5 sm:mt-6 leading-relaxed">
           Every angle refined. Every surface considered. A headphone that moves with you, not against you.
         </p>
       </motion.div>
@@ -41,16 +41,16 @@ export default function MovingTextSection({ containerRef }) {
       {/* Block 2 */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute inset-0 flex flex-col justify-center max-w-xl"
+        className="absolute inset-0 flex flex-col justify-center max-w-[17rem] sm:max-w-md md:max-w-xl"
       >
         <div className="w-12 h-px bg-white/40 mb-4" />
         <h3 className="text-xs tracking-[0.3em] text-white/50 font-mono uppercase mb-4">
           COMFORT
         </h3>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
           Weightless on<br />your ears.
         </h2>
-        <p className="text-lg text-white/70 mt-6 leading-relaxed">
+        <p className="text-sm sm:text-lg text-white/70 mt-5 sm:mt-6 leading-relaxed">
           Ultra-soft cushions and a featherlight frame distribute pressure evenly — designed for hours of effortless listening.
         </p>
       </motion.div>
@@ -58,16 +58,16 @@ export default function MovingTextSection({ containerRef }) {
       {/* Block 3 */}
       <motion.div
         style={{ opacity: opacity3, y: y3 }}
-        className="absolute inset-0 flex flex-col justify-center max-w-xl"
+        className="absolute inset-0 flex flex-col justify-center max-w-[17rem] sm:max-w-md md:max-w-xl"
       >
         <div className="w-12 h-px bg-white/40 mb-4" />
         <h3 className="text-xs tracking-[0.3em] text-white/50 font-mono uppercase mb-4">
           MATERIALS
         </h3>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
           Premium in<br />every detail.
         </h2>
-        <p className="text-lg text-white/70 mt-6 leading-relaxed">
+        <p className="text-sm sm:text-lg text-white/70 mt-5 sm:mt-6 leading-relaxed">
           Soft-touch leather, carbon fiber headband, and precision-milled aluminum — materials chosen for durability and luxury.
         </p>
       </motion.div>

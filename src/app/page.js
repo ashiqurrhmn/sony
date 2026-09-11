@@ -53,15 +53,15 @@ export default function Home() {
             backgroundColor: "#000000",
           }}
         >
-          <div className="absolute inset-78 z-10 pointer-events-none">
+          <div className="absolute inset-80 z-10 pointer-events-none bg-gradient-to-r from-black via-black/40 to-transparent md:bg-none">
             <MovingTextSection containerRef={movingContainerRef} />
           </div>
 
-          <div className="w-[70%] ml-auto h-full relative">
+          <div className="w-full md:w-[60%] ml-auto h-full relative">
             <ScrollCanvas
               totalFrames={300}
               framePath="/moving-headphone-frames/ezgif-frame"
-              frameExt="png"
+              frameExt="webp"
               containerRef={movingContainerRef}
             />
           </div>
@@ -87,14 +87,14 @@ export default function Home() {
       {/* ─── Technical Specifications ───────────────── */}
       <section
         id="specs"
-        className="relative py-32 px-8 md:px-16 lg:px-24 bg-black border-t border-b border-white/10"
+        className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-8 md:px-16 lg:px-24 bg-black border-t border-b border-white/10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <p className="text-xs tracking-[0.3em] text-white/50 font-mono uppercase mb-4">
               SPECIFICATIONS
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
               The full picture.
             </h2>
             <p className="text-lg text-white/60 max-w-md mx-auto">
@@ -102,7 +102,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 category: "AUDIO",
@@ -152,7 +152,7 @@ export default function Home() {
             ].map((spec, i) => (
               <div
                 key={spec.label}
-                className="group p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/30 transition-all duration-300"
+                className="premium-card group p-5 sm:p-7 rounded-2xl hover:bg-white/[0.05] hover:border-white/30 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-3">
                   <p className="text-[10px] tracking-[0.25em] text-white/50 font-mono uppercase">
@@ -197,7 +197,7 @@ export default function Home() {
           <ScrollCanvas
             totalFrames={300}
             framePath="/headphone-model-frames/ezgif-frame"
-            frameExt="png"
+            frameExt="webp"
             containerRef={scrollContainerRef}
           />
 
@@ -215,13 +215,13 @@ export default function Home() {
       {/* ─── Final CTA Banner ───────────────────────── */}
       <section
         id="buy"
-        className="relative py-32 px-8 overflow-hidden bg-black border-b border-white/10"
+        className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-8 overflow-hidden bg-black border-b border-white/10"
       >
         <div className="relative max-w-3xl mx-auto text-center">
           <p className="text-xs tracking-[0.3em] text-white/50 font-mono uppercase mb-6">
             AVAILABLE NOW
           </p>
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-8">
             Your sound. <br /> Nothing else.
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -239,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* ─── Simple Footer ──────────────────────────── */}
-      <footer className="py-12 px-8 border-t border-white/10 bg-black text-center md:text-left">
+      <footer className="py-10 sm:py-12 px-5 sm:px-8 border-t border-white/10 bg-black text-center md:text-left">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <span className="font-serif tracking-tight font-bold text-2xl text-white">
             Sony

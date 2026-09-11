@@ -14,16 +14,16 @@ export default function CTASection({ containerRef }) {
 
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-10">
-      <motion.div style={{ opacity, scale }} className="flex flex-col items-center max-w-2xl px-4">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white/90">
+      <motion.div style={{ opacity, scale }} className="flex flex-col items-center max-w-2xl px-5 sm:px-8">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white/90">
           Hear everything. Feel nothing else.
         </h2>
-        <p className="text-xl text-white/60 mt-6">
+        <p className="text-base sm:text-xl text-white/60 mt-5 sm:mt-6">
           WH-1000XM6. Designed for focus, crafted for comfort.
         </p>
         
         <motion.button 
-          className="mt-10 px-8 py-4 rounded-full font-semibold bg-white hover:bg-white/90 text-black shadow-lg transition-all duration-200 pointer-events-auto"
+          className="mt-8 sm:mt-10 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold bg-gradient-to-br from-white to-white/80 text-black shadow-[0_10px_30px_rgba(255,255,255,0.16)] transition-all duration-200 pointer-events-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -41,4 +41,3 @@ export default function CTASection({ containerRef }) {
     </div>
   );
 }
-
