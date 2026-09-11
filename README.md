@@ -66,6 +66,12 @@ The current result is much lighter, but image-sequence animation is still not as
 
 The page is currently optimized and visually polished primarily for **desktop**. Basic mobile and tablet safeguards exist for canvas sizing and navigation, but those layouts are not yet production-ready. The scroll-driven animation sections, text placement, spacing, and interaction density still need a dedicated mobile and tablet design pass.
 
+### Next improvements
+
+- **Near-PNG animation quality with a smaller payload:** create perceptually lossless, device-sized AVIF/WebP frame variants and serve only the appropriate variant for each screen. This should preserve the visual clarity of the original PNG sequences while avoiding their large transfer cost.
+- **Adaptive animation delivery:** load an initial frame immediately, then fetch nearby frames as the visitor scrolls instead of decoding every frame at startup. Frame count, resolution, and preload range should adapt to the device, screen density, and connection quality.
+- **Fully responsive experience:** complete dedicated phone and tablet layouts for every section, including the canvas animations, text overlays, navigation, grids, spacing, and touch interactions. The target is a polished experience from small phones through large desktop displays.
+
 ### Performance and delivery
 
 - Each animated section still has many individual image requests and decodes frames in the browser.
