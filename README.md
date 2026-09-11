@@ -7,7 +7,7 @@ A high-end, scroll-driven product landing page concept for Sony WH-1000XM6 headp
 - Scroll-scrubbed headphone animations across the hero, design, and hardware sections.
 - Premium, minimalist product UI with responsive navigation and mobile menu.
 - Animated feature, statistic, press, comfort, sound, noise-cancelling, and specification sections.
-- Mobile- and tablet-aware canvas composition so product frames remain visible without aggressive cropping.
+- Desktop-first presentation with initial mobile/tablet canvas adjustments.
 - Asset-processing scripts for repeatable image and animation-frame optimization.
 
 ## Technology
@@ -61,6 +61,12 @@ The optimized media collection is now approximately **13 MB**, a reduction of mo
 ## What still needs improvement
 
 The current result is much lighter, but image-sequence animation is still not as efficient as a purpose-built media pipeline.
+
+### Responsive design status
+
+The page is currently optimized and visually polished primarily for **desktop**. Basic mobile and tablet safeguards exist for canvas sizing and navigation, but those layouts are not yet production-ready. The scroll-driven animation sections, text placement, spacing, and interaction density still need a dedicated mobile and tablet design pass.
+
+### Performance and delivery
 
 - Each animated section still has many individual image requests and decodes frames in the browser.
 - Some sequences preload a large number of frames, which can create memory pressure on lower-end phones.
