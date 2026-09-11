@@ -53,20 +53,17 @@ export default function Home() {
             backgroundColor: "#000000",
           }}
         >
-          <div className="flex h-full w-full">
-            {/* Left: Scroll-linked text */}
-            <div className="w-1/2 h-full relative z-10">
-              <MovingTextSection containerRef={movingContainerRef} />
-            </div>
-            {/* Right: Headphone canvas */}
-            <div className="w-1/2 h-full relative">
-              <ScrollCanvas
-                totalFrames={300}
-                framePath="/moving-headphone-frames/ezgif-frame"
-                frameExt="png"
-                containerRef={movingContainerRef}
-              />
-            </div>
+          <div className="absolute inset-78 z-10 pointer-events-none">
+            <MovingTextSection containerRef={movingContainerRef} />
+          </div>
+
+          <div className="w-[70%] ml-auto h-full relative">
+            <ScrollCanvas
+              totalFrames={300}
+              framePath="/moving-headphone-frames/ezgif-frame"
+              frameExt="png"
+              containerRef={movingContainerRef}
+            />
           </div>
         </div>
       </div>
