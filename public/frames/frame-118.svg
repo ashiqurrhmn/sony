@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#050505"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="25%">
+      <stop offset="0%" stop-color="rgba(0,80,255,0.06)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <circle cx="960" cy="540" r="116.86414610197038" fill="none" stroke="#00D6FF" stroke-opacity="0.19" stroke-width="2"/>
+  <circle cx="960" cy="540" r="70.11848766118223" fill="none" stroke="#00D6FF" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="960" y="540" text-anchor="middle" dominant-baseline="central" fill="rgba(255,255,255,0.06)" font-family="system-ui, sans-serif" font-weight="bold" font-size="200">118</text>
+  <text x="960" y="670" text-anchor="middle" dominant-baseline="central" fill="#00D6FF" fill-opacity="0.25" font-family="system-ui, sans-serif" font-weight="500" font-size="14">ASSEMBLED</text>
+  <rect x="672" y="1020" width="576" height="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="672" y="1020" width="566.4" height="2" fill="#00D6FF" fill-opacity="0.3"/>
+</svg>

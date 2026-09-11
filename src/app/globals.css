@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════
+   Custom Fonts: Tempting (Script) + Switzer (Swiss Sans)
+   ═══════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: "Tempting";
+  src: url("/fonts/tempting.otf") format("opentype"),
+       url("/fonts/Tempting - PERSONAL USE ONLY.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #000000;
+  --bg-secondary: #050505;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-subtle: rgba(255, 255, 255, 0.3);
+
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.25);
+
+  --font-switzer: "Switzer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-tempting: "Tempting", cursive;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-switzer);
+  --font-script: var(--font-tempting);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-switzer);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* ─── Font Utility Classes ─────────────────────── */
+
+.font-script {
+  font-family: var(--font-tempting);
+}
+
+.font-sans-switzer {
+  font-family: var(--font-switzer);
+}
+
+/* ─── Plain Black and White Buttons ────────────── */
+
+.btn-solid-white {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.btn-solid-white:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-white:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ─── Glassmorphism Minimal ────────────────────── */
+
+.glass {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ─── Custom Scrollbar ─────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ─── Selection ────────────────────────────────── */
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ─── Pure White Loading Bar ───────────────────── */
+
+.loading-bar {
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
