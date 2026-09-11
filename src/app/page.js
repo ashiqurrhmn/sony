@@ -53,11 +53,11 @@ export default function Home() {
             backgroundColor: "#000000",
           }}
         >
-          <div className="absolute inset-80 z-10 pointer-events-none bg-gradient-to-r from-black via-black/40 to-transparent md:bg-none">
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black via-black/55 to-transparent lg:bg-gradient-to-r lg:from-black lg:via-black/35 lg:to-transparent">
             <MovingTextSection containerRef={movingContainerRef} />
           </div>
 
-          <div className="w-full md:w-[60%] ml-auto h-full relative">
+          <div className="w-full lg:w-[60%] ml-auto h-full relative">
             <ScrollCanvas
               totalFrames={300}
               framePath="/moving-headphone-frames/ezgif-frame"

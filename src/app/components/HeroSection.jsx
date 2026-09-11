@@ -92,16 +92,21 @@ export default function HeroSection() {
     const img = imagesRef.current[index];
     if (!img) return;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Canvas pixels are scaled by DPR, but drawing coordinates must stay in
+    // CSS pixels. Using the backing-store dimensions here magnified frames on
+    // high-density mobile screens.
+    const cw = canvas.clientWidth;
+    const ch = canvas.clientHeight;
+    ctx.clearRect(0, 0, cw, ch);
     ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const cw = canvas.width;
-    const ch = canvas.height;
+    ctx.fillRect(0, 0, cw, ch);
     const iw = img.naturalWidth || 1920;
     const ih = img.naturalHeight || 1080;
-    // Preserve the product's presence on narrow screens without cropping its silhouette.
-    const scale = Math.max(cw / iw, ch / ih) * (window.innerWidth < 640 ? 0.92 : 0.75);
+    // Phone screens use contain so the whole headphone remains in view instead
+    // of filling the tall viewport and cropping into the product.
+    const scale = window.innerWidth < 1024
+      ? Math.min(cw / iw, ch / ih) * 0.96
+      : Math.max(cw / iw, ch / ih) * 0.75;
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (cw - dw) / 2;

@@ -66,9 +66,12 @@ export function ScrollCanvas({
     if (!ctx) return;
 
     const img = imagesRef.current[frameIndex];
+    const canvasWidth = canvas.clientWidth;
+    const canvasHeight = canvas.clientHeight;
+
     if (!img || !img.naturalWidth) {
       ctx.fillStyle = "#050505";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       return;
     }
 
@@ -78,16 +81,18 @@ export function ScrollCanvas({
 
     rafRef.current = requestAnimationFrame(() => {
       ctx.fillStyle = "#050505";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-      const hRatio = canvas.width / img.naturalWidth;
-      const vRatio = canvas.height / img.naturalHeight;
-      const ratio = Math.max(hRatio, vRatio);
+      const hRatio = canvasWidth / img.naturalWidth;
+      const vRatio = canvasHeight / img.naturalHeight;
+      const ratio = window.innerWidth < 1024
+        ? Math.min(hRatio, vRatio) * 0.96
+        : Math.max(hRatio, vRatio);
 
       const drawWidth = img.naturalWidth * ratio;
       const drawHeight = img.naturalHeight * ratio;
-      const offsetX = (canvas.width - drawWidth) / 2;
-      const offsetY = (canvas.height - drawHeight) / 2;
+      const offsetX = (canvasWidth - drawWidth) / 2;
+      const offsetY = (canvasHeight - drawHeight) / 2;
 
       ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
       lastDrawnFrameIndexRef.current = frameIndex;
